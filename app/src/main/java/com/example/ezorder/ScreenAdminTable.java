@@ -25,6 +25,6 @@ public class ScreenAdminTable extends AppCompatActivity {
         //sự kiện hiển thị list bàn ăn từ database sqlite
 
         //sự kiện click vào 1 item trong list bàn ăn
-        
+
     }
 }
