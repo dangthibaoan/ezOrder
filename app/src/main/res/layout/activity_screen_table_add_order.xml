@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:scrollbars="vertical"
+    android:scrollbarSize="5dp"
+    android:layout_height="match_parent"
+    tools:context=".ScreenAdmin">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:text="TẠO ORDER"
+        android:layout_margin="20dp"
+        android:textSize="40dp"/>
+
+    <ListView
+        android:id="@+id/list_item_1"
+        android:layout_margin="20dp"
+        android:scrollbars="vertical"
+        android:scrollbarSize="5dp"
+        android:divider="#458B74"
+        android:dividerHeight="5px"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"></ListView>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="Số lượng:"
+            android:textSize="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/txtSoluong"
+            android:text="1"
+            android:layout_marginLeft="20dp"
+            android:layout_width="40dp"
+            android:inputType="number"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btnAddFood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:background="@android:drawable/button_onoff_indicator_on"
+            android:text="Thêm vào order" />
+    </TableRow>
+    <ListView
+        android:id="@+id/list_item_2"
+        android:layout_margin="20dp"
+        android:scrollbars="vertical"
+        android:scrollbarSize="5dp"
+        android:divider="#458B74"
+        android:dividerHeight="5px"
+        android:minHeight="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"></ListView>
+    <Button
+        android:id="@+id/btnAddOrder"
+        android:background="@android:drawable/button_onoff_indicator_on"
+        android:layout_marginHorizontal="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ezOrder</string>
+    <string name="screen_order">Order</string>
+    <string name="screen_cook">Cook</string>
+    <string name="screen_admin">Admin Managerment</string>
+
+</resources>

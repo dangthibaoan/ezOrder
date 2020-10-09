@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.ezorder">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".ScreenTableShowBill"
+            android:label="Hóa đơn "/>
+        <activity
+            android:name=".ScreenAdminTableInfo"
+            android:label="Bàn ăn" />
+        <activity
+            android:name=".ScreenAdminOrderInfo"
+            android:label="Order" />
+        <activity
+            android:name=".ScreenAdminFoodInfo"
+            android:label="Món ăn" />
+        <activity
+            android:name=".ScreenAdminAccountInfo"
+            android:label="Tài khoản" />
+        <activity
+            android:name=".ScreenTableAddOrder"
+            android:label="Thêm Order" />
+        <activity
+            android:name=".ScreenAdminAccount"
+            android:label="Danh sách tài khoản" />
+        <activity
+            android:name=".ScreenAdminOrder"
+            android:label="Danh sách Order" />
+        <activity
+            android:name=".ScreenAdminFood"
+            android:label="Danh sách món ăn" />
+        <activity
+            android:name=".ScreenAdminTable"
+            android:label="Danh sách bàn ăn" />
+        <activity
+            android:name=".ScreenAdmin"
+            android:label="Quản lý" />
+        <activity
+            android:name=".ScreenCook"
+            android:label="Cooker" />
+        <activity
+            android:name=".ScreenLogin"
+            android:label="Login" />
+        <activity
+            android:name=".ScreenTable"
+            android:label="Bàn ăn" />
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

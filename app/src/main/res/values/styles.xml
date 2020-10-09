@@ -1,0 +1,13 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorAccent">@color/colorAccent</item>
+<!--        <item name="android:windowNoTitle">true</item>-->
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">#C1FFC1</item>
+        <item name="android:navigationBarColor">#C1FFC1</item>
+        <item name="android:textColor">#2E8B57</item>
+        <item name="editTextBackground">?attr/editTextBackground</item>
+    </style>
+</resources>
