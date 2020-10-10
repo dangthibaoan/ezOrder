@@ -7,7 +7,7 @@
     android:scrollbars="vertical"
     android:scrollbarSize="5dp"
     android:layout_height="match_parent"
-    tools:context=".ScreenAdmin">
+    tools:context=".ScreenTableAddOrder">
 
     <TextView
         android:layout_width="match_parent"

@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ScreenAdmin">
+    tools:context=".ScreenAdminAccount">
 
     <TextView
         android:layout_width="match_parent"
@@ -18,12 +18,13 @@
 
     <Button
         android:id="@+id/btnAddTable"
-        android:text="Thêm tài khoản mới"
-        android:layout_marginHorizontal="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:background="@android:drawable/button_onoff_indicator_on" />
+        android:layout_marginHorizontal="20dp"
+        android:background="@android:drawable/button_onoff_indicator_on"
+        android:onClick="onClick"
+        android:text="Thêm tài khoản mới" />
     <ListView
         android:id="@+id/list_item"
         android:layout_margin="20dp"
