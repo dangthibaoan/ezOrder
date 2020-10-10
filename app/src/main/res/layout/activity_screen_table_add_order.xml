@@ -26,7 +26,7 @@
         android:divider="#458B74"
         android:dividerHeight="5px"
         android:layout_width="match_parent"
-        android:layout_height="300dp"></ListView>
+        android:layout_height="250dp"></ListView>
     <TableRow
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -59,14 +59,20 @@
         android:scrollbarSize="5dp"
         android:divider="#458B74"
         android:dividerHeight="5px"
-        android:minHeight="50dp"
         android:layout_width="match_parent"
         android:layout_height="125dp"></ListView>
+    <EditText
+        android:id="@+id/txtNote"
+        android:hint="Ghi chú"
+        android:inputType="textMultiLine"
+        android:layout_marginHorizontal="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
     <Button
         android:id="@+id/btnAddOrder"
         android:text="Tạo Order"
         android:background="@android:drawable/button_onoff_indicator_on"
-        android:layout_marginHorizontal="20dp"
+        android:layout_margin="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 </LinearLayout>
