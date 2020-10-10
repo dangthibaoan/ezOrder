@@ -18,7 +18,7 @@
 
     <Button
         android:id="@+id/btnAddTable"
-        android:text="Thêm bàn ăn"
+        android:text="Thêm bàn ăn mới"
         android:layout_marginHorizontal="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

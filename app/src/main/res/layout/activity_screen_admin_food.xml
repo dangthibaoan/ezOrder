@@ -16,6 +16,14 @@
         android:layout_margin="20dp"
         android:textSize="40dp"/>
 
+    <Button
+        android:id="@+id/btnAddTable"
+        android:text="Thêm món ăn mới"
+        android:layout_marginHorizontal="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@android:drawable/button_onoff_indicator_on" />
     <ListView
         android:id="@+id/list_item"
         android:layout_margin="20dp"
