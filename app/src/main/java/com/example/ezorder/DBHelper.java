@@ -67,7 +67,7 @@ public class DBHelper extends SQLiteOpenHelper {
     //TODO**: STRING CREATE TABLE
 
     // TODO : table User
-    private static final String CREATE_TABLE_USER = "CREATE TABLE " + TABLE_USER + "( " +
+    private static final String CREATE_TABLE_USER = "CREATE TABLE IF NOT EXISTS " + TABLE_USER + "( " +
             COLUMN_USER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
             COLUMN_USER_NAME + " TEXT," +
             COLUMN_USER_PHONE + " TEXT," +
@@ -77,18 +77,18 @@ public class DBHelper extends SQLiteOpenHelper {
             COLUMN_USER_ROLE_FK + " INTEGER REFERENCES " + TABLE_ROLE + ")";
 
     // TODO : table Role
-    private static final String CREATE_TABLE_ROLE = "CREATE TABLE " + TABLE_ROLE + "( " +
+    private static final String CREATE_TABLE_ROLE = "CREATE TABLE IF NOT EXISTS " + TABLE_ROLE + "( " +
             COLUMN_ROLE_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
             COLUMN_ROLE_NAME + " TEXT )";
 
     // TODO : table Table
-    private static final String CREATE_TABLE_TABLE = "CREATE TABLE " + TABLE_TABLE + "( " +
+    private static final String CREATE_TABLE_TABLE = "CREATE TABLE IF NOT EXISTS " + TABLE_TABLE + "( " +
             COLUMN_TABLE_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
             COLUMN_TABLE_NUMBER + " INTEGER," +
             COLUMN_TABLE_STATUS + " INTEGER )";
 
     // TODO : table Food
-    private static final String CREATE_TABLE_FOOD = "CREATE TABLE " + TABLE_FOOD + "( " +
+    private static final String CREATE_TABLE_FOOD = "CREATE TABLE IF NOT EXISTS " + TABLE_FOOD + "( " +
             COLUMN_FOOD_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
             COLUMN_FOOD_NAME + " TEXT," +
             COLUMN_FOOD_PRICE + " INTEGER," +
@@ -97,7 +97,7 @@ public class DBHelper extends SQLiteOpenHelper {
             COLUMN_FOOD_STATUS + " INTEGER )";
 
     // TODO : table Order
-    private static final String CREATE_TABLE_ORDER = "CREATE TABLE " + TABLE_ORDER + "( " +
+    private static final String CREATE_TABLE_ORDER = "CREATE TABLE IF NOT EXISTS " + TABLE_ORDER + "( " +
             COLUMN_ORDER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
             COLUMN_ORDER_NUMBER + " INTEGER," +
             COLUMN_ORDER_TIME + " TEXT," +
@@ -106,7 +106,7 @@ public class DBHelper extends SQLiteOpenHelper {
             COLUMN_ORDER_TABLE_FK + " INTEGER REFERENCES " + TABLE_TABLE + ")";
 
     // TODO : table Bill
-    private static final String CREATE_TABLE_BILL = "CREATE TABLE " + TABLE_BILL + "( " +
+    private static final String CREATE_TABLE_BILL = "CREATE TABLE IF NOT EXISTS " + TABLE_BILL + "( " +
             COLUMN_BILL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
             COLUMN_BILL_TIME +  " TEXT," +
             COLUMN_BILL_TOTAL + " INTEGER," +

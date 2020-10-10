@@ -3,6 +3,7 @@ package com.example.ezorder;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
@@ -19,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-        
+        SQLiteDatabase ezOrderDB;
         Thread wait = new Thread(){
             public void run(){
                 try {
