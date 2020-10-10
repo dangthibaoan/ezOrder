@@ -14,7 +14,7 @@
         android:textStyle="bold"
         android:text="TÀI KHOẢN"
         android:layout_margin="20dp"
-        android:textSize="40dp"/>
+        android:textSize="40sp"/>
 
     <Button
         android:id="@+id/btnAddTable"
@@ -24,7 +24,7 @@
         android:layout_marginHorizontal="20dp"
         android:background="@android:drawable/button_onoff_indicator_on"
         android:onClick="onClick"
-        android:text="Thêm tài khoản mới" />
+        android:text="Cấp tài khoản mới" />
     <ListView
         android:id="@+id/list_item"
         android:layout_margin="20dp"
