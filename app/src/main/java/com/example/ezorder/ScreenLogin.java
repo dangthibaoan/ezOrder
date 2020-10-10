@@ -24,25 +24,29 @@ public class ScreenLogin extends AppCompatActivity {
         txtUsername = findViewById(R.id.txtUsn);
         txtPassword = findViewById(R.id.txtPwd);
 
-        Button btnLogin = findViewById(R.id.btnLogin);
-
         db = openOrCreateDatabase("ezOrderDB", MODE_PRIVATE, null);
         final DBHelper dbHelper = new DBHelper(getApplicationContext());
+        final int admin = dbHelper.getRoleID("ADMIN");
+        final int order = dbHelper.getRoleID("ORDER");
+        final int chef = dbHelper.getRoleID("CHEF");
 
+        Button btnLogin = findViewById(R.id.btnLogin);
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String username = txtUsername.getText().toString();
                 String password = txtPassword.getText().toString();
 
+                int roleID = dbHelper.getUserRoleID(username,password);
+
                 //Demo chuyển activity, sẽ kết nối sqlite sau
-                if (dbHelper.getUserRoleID(username,password)==dbHelper.getRoleID("ADMIN")){
+                if (roleID==admin){
                     startActivity(new Intent(ScreenLogin.this,ScreenAdmin.class));
                 }
-                else if (dbHelper.getUserRoleID(username,password)==dbHelper.getRoleID("ORDER")){
+                else if (roleID==order){
                     startActivity(new Intent(ScreenLogin.this, ScreenTable.class));
                 }
-                else if (dbHelper.getUserRoleID(username,password)==dbHelper.getRoleID("CHEF")){
+                else if (roleID==chef){
                     startActivity(new Intent(ScreenLogin.this,ScreenCook.class));
                 }
                 else {

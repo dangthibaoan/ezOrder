@@ -149,21 +149,25 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL(CREATE_TABLE_ORDER);
         db.execSQL(CREATE_TABLE_BILL);
 
-        Role role = new Role();
-        for (int i=0;i<3;i++){
-            role.setRoleID(i);
-            if (i==0) role.setRoleName("ADMIN");
-            else if (i==1) role.setRoleName("ORDER");
-            else role.setRoleName("CHEF");
-
-            ContentValues contentValues = new ContentValues();
-            contentValues.put(COLUMN_ROLE_NAME,role.getRoleName());
-
-            db.insert(TABLE_ROLE,null,contentValues);
-        }
-        insertAdmin(db);
+//        Role role = new Role();
+//        for (int i=0;i<3;i++){
+//            role.setRoleID(i);
+//            if (i==0) role.setRoleName("ADMIN");
+//            else if (i==1) role.setRoleName("ORDER");
+//            else role.setRoleName("CHEF");
+//
+//            ContentValues contentValues = new ContentValues();
+//            contentValues.put(COLUMN_ROLE_NAME,role.getRoleName());
+//
+//            db.insert(TABLE_ROLE,null,contentValues);
+//        }
+//        insertAdmin(db);
         db.close();
         Log.d(TAG, "onCreate: Running ...!");
+    }
+
+    public SQLiteDatabase open(){
+        return this.getWritableDatabase();
     }
 
     public void insertAdmin(SQLiteDatabase db){
