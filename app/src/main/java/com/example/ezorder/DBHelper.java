@@ -2,11 +2,17 @@ package com.example.ezorder;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 import androidx.annotation.Nullable;
+
+import com.example.ezorder.Model.Role;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DBHelper extends SQLiteOpenHelper {
 
@@ -74,7 +80,7 @@ public class DBHelper extends SQLiteOpenHelper {
             COLUMN_USER_ACCOUNT_NAME + " TEXT," +
             COLUMN_USER_ACCOUNT_PASS + " TEXT," +
             COLUMN_USER_STATUS + " INTEGER," +
-            COLUMN_USER_ROLE_FK + " INTEGER REFERENCES " + TABLE_ROLE + ")";
+            COLUMN_USER_ROLE_FK + " INTEGER REFERENCES " + TABLE_ROLE + "(" + COLUMN_ROLE_ID + ") ON DELETE SET NULL)";
 
     // TODO : table Role
     private static final String CREATE_TABLE_ROLE = "CREATE TABLE IF NOT EXISTS " + TABLE_ROLE + "( " +
@@ -102,16 +108,16 @@ public class DBHelper extends SQLiteOpenHelper {
             COLUMN_ORDER_NUMBER + " INTEGER," +
             COLUMN_ORDER_TIME + " TEXT," +
             COLUMN_ORDER_NOTE + " TEXT," +
-            COLUMN_ORDER_FOOD_FK + " INTEGER REFERENCES " + TABLE_FOOD + "," +
-            COLUMN_ORDER_TABLE_FK + " INTEGER REFERENCES " + TABLE_TABLE + ")";
+            COLUMN_ORDER_FOOD_FK + " INTEGER REFERENCES " + TABLE_FOOD + "(" + COLUMN_FOOD_ID + ") ON DELETE SET NULL," +
+            COLUMN_ORDER_TABLE_FK + " INTEGER REFERENCES " + TABLE_TABLE + "(" + COLUMN_TABLE_ID + ") ON DELETE SET NULL)";
 
     // TODO : table Bill
     private static final String CREATE_TABLE_BILL = "CREATE TABLE IF NOT EXISTS " + TABLE_BILL + "( " +
             COLUMN_BILL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
             COLUMN_BILL_TIME +  " TEXT," +
             COLUMN_BILL_TOTAL + " INTEGER," +
-            COLUMN_BILL_USER_FK + " INTEGER REFERENCES " + TABLE_USER + "," +
-            COLUMN_BILL_ORDER_FK + " INTEGER REFERENCES " + TABLE_ORDER + ")";
+            COLUMN_BILL_USER_FK + " INTEGER REFERENCES " + TABLE_USER + "(" + COLUMN_USER_ID + ") ON DELETE SET NULL," +
+            COLUMN_BILL_ORDER_FK + " INTEGER REFERENCES " + TABLE_ORDER + "(" + COLUMN_ORDER_ID + ") ON DELETE SET NULL)";
 
 
     // TODO : STRING DROP
@@ -142,7 +148,46 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL(CREATE_TABLE_ORDER);
         db.execSQL(CREATE_TABLE_BILL);
 
+        Role role = new Role();
+        for (int i=0;i<3;i++){
+            role.setRoleID(i);
+            if (i==0) role.setRoleName("ADMIN");
+            else if (i==1) role.setRoleName("ORDER");
+            else role.setRoleName("CHEF");
+
+            ContentValues contentValues = new ContentValues();
+            contentValues.put(COLUMN_ROLE_NAME,role.getRoleName());
+
+            db.insert(TABLE_ROLE,null,contentValues);
+        }
+        insertAdmin(db);
+        db.close();
         Log.d(TAG, "onCreate: Running ...!");
+    }
+
+    public void insertAdmin(SQLiteDatabase db){
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(COLUMN_USER_NAME,"");
+        contentValues.put(COLUMN_USER_PHONE,"");
+        contentValues.put(COLUMN_USER_ACCOUNT_NAME,"admin");
+        contentValues.put(COLUMN_USER_ACCOUNT_PASS,"123456");
+        contentValues.put(COLUMN_USER_STATUS,0); //0 - Bình thường; 1 - Cấm đăng nhập
+        contentValues.put(COLUMN_USER_ROLE_FK,getRoleID("ADMIN"));
+
+        db.insert(TABLE_USER,null,contentValues);
+    }
+    //Lấy roleID theo roleName đã biết
+    public int getRoleID(String roleName){
+        List<Role> roleID = new ArrayList<Role>();
+        String sql = "SELECT * FROM " + TABLE_ROLE
+                + " WHERE " + COLUMN_ROLE_NAME + " LIKE '%" + roleName + "%'";
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor c = db.rawQuery(sql, null);
+
+        c.close();
+        db.close();
+        return roleID.get(0).getRoleID();
     }
 
     @Override
@@ -157,4 +202,6 @@ public class DBHelper extends SQLiteOpenHelper {
 
         Log.d(TAG, "onUpgrade: Running ...");
     }
+
+
 }
