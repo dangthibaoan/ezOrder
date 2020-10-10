@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ScreenAdminAccount">
-
+<LinearLayout
+    android:id="@+id/linearLayout"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -15,23 +20,53 @@
         android:text="TÀI KHOẢN"
         android:layout_margin="20dp"
         android:textSize="40sp"/>
-
-    <Button
-        android:id="@+id/btnAddTable"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
+    <TextView
+        android:text="Tài khoản của bạn:"
+        android:textSize="25sp"
+        android:layout_marginBottom="20dp"
         android:layout_marginHorizontal="20dp"
-        android:background="@android:drawable/button_onoff_indicator_on"
-        android:onClick="onClick"
-        android:text="Cấp tài khoản mới" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
     <ListView
-        android:id="@+id/list_item"
-        android:layout_margin="20dp"
+        android:id="@+id/list_item_1"
+        android:layout_marginBottom="20dp"
+        android:layout_marginHorizontal="20dp"
+        android:scrollbars="vertical"
+        android:scrollbarSize="5dp"
+        android:divider="#458B74"
+        android:dividerHeight="5px"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"></ListView>
+    <TextView
+        android:text="Tài khoản bạn đã cấp:"
+        android:textSize="25sp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <ListView
+        android:id="@+id/list_item_2"
+        android:layout_marginBottom="20dp"
+        android:layout_marginHorizontal="20dp"
         android:scrollbars="vertical"
         android:scrollbarSize="5dp"
         android:divider="#458B74"
         android:dividerHeight="5px"
         android:layout_width="match_parent"
         android:layout_height="match_parent"></ListView>
+
 </LinearLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnLogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@android:drawable/ic_menu_add"
+        android:backgroundTint="#FFFFFF"
+        android:onClick="onClick"
+        android:src="@android:drawable/ic_input_add"
+        app:fabSize="normal"
+        app:layout_anchor="@id/linearLayout"
+        app:layout_anchorGravity="bottom|end" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

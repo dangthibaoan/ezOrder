@@ -1,37 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="@color/cardview_dark_background"
     tools:context=".ScreenAdminFood">
 
-    <TextView
+    <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textStyle="bold"
-        android:text="MÓN ĂN"
-        android:layout_margin="20dp"
-        android:textSize="40dp"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btnAddTable"
-        android:text="Thêm món ăn mới"
-        android:onClick="onClick"
-        android:layout_marginHorizontal="20dp"
-        android:layout_width="match_parent"
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:gravity="center"
+            android:text="MÓN ĂN"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+        <ListView
+            android:id="@+id/list_item"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="20dp"
+            android:divider="#458B74"
+            android:dividerHeight="5px"
+            android:scrollbarSize="5dp"
+            android:scrollbars="vertical"></ListView>
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnLogout"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:background="@android:drawable/button_onoff_indicator_on" />
-    <ListView
-        android:id="@+id/list_item"
         android:layout_margin="20dp"
-        android:scrollbars="vertical"
-        android:scrollbarSize="5dp"
-        android:divider="#458B74"
-        android:dividerHeight="5px"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"></ListView>
-</LinearLayout>
+        android:background="@android:drawable/ic_menu_add"
+        android:backgroundTint="#FFFFFF"
+        android:onClick="onClick"
+        android:src="@android:drawable/ic_input_add"
+        app:fabSize="normal"
+        app:layout_anchor="@id/linearLayout"
+        app:layout_anchorGravity="bottom|end" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

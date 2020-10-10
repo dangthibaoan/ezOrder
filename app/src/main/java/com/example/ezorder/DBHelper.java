@@ -10,6 +10,7 @@ import android.util.Log;
 import androidx.annotation.Nullable;
 
 import com.example.ezorder.Model.Role;
+import com.example.ezorder.Model.User;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -188,6 +189,20 @@ public class DBHelper extends SQLiteOpenHelper {
         c.close();
         db.close();
         return roleID.get(0).getRoleID();
+    }
+
+    public int getUserRoleID(String Username, String Password){
+        List<User> userRoleID = new ArrayList<User>();
+        String sql = "SELECT * FROM " + TABLE_USER
+                + " WHERE " + COLUMN_USER_ACCOUNT_NAME + " = '" + Username + "' AND "
+                + COLUMN_USER_ACCOUNT_PASS + " = '" + Password + "'";
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor c = db.rawQuery(sql, null);
+
+        c.close();
+        db.close();
+        return userRoleID.get(0).getUser_role();
     }
 
     @Override
