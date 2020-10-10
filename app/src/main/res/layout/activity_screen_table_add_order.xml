@@ -61,9 +61,10 @@
         android:dividerHeight="5px"
         android:minHeight="50dp"
         android:layout_width="match_parent"
-        android:layout_height="200dp"></ListView>
+        android:layout_height="125dp"></ListView>
     <Button
         android:id="@+id/btnAddOrder"
+        android:text="Tạo Order"
         android:background="@android:drawable/button_onoff_indicator_on"
         android:layout_marginHorizontal="20dp"
         android:layout_width="match_parent"
