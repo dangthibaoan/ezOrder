@@ -40,15 +40,15 @@
             android:id="@+id/txtSoluong"
             android:text="1"
             android:layout_marginLeft="20dp"
-            android:layout_width="40dp"
+            android:layout_width="50dp"
             android:inputType="number"
             android:layout_height="wrap_content"/>
 
         <Button
             android:id="@+id/btnAddFood"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
+            android:layout_marginHorizontal="20dp"
             android:background="@android:drawable/button_onoff_indicator_on"
             android:text="Thêm vào order" />
     </TableRow>
