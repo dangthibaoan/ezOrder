@@ -22,10 +22,10 @@ public class ScreenAdminOrder extends AppCompatActivity {
 
         lv= (ListView) findViewById(R.id.list_item);
         list = new ArrayList<>();
-        list.add("Cơm");
-        list.add("Cháo");
-        list.add("Phở");
-        list.add("Mỳ");
+        list.add("15");
+        list.add("20");
+        list.add("100");
+        list.add("66");
 
         ArrayAdapter adt = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,list);
 

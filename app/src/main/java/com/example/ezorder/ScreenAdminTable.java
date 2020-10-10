@@ -23,10 +23,10 @@ public class ScreenAdminTable extends AppCompatActivity {
 
         lv= (ListView) findViewById(R.id.list_item);
         list = new ArrayList<>();
-        list.add("Cơm");
-        list.add("Cháo");
-        list.add("Phở");
-        list.add("Mỳ");
+        list.add("Bàn 1");
+        list.add("Bàn 2");
+        list.add("Bàn 3");
+        list.add("Bàn 4");
 
         ArrayAdapter adt = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,list);
 
