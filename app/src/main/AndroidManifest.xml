@@ -9,9 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ScreenSignIn"></activity>
         <activity
             android:name=".ScreenTableShowBill"
-            android:label="Hóa đơn "/>
+            android:label="Hóa đơn " />
         <activity
             android:name=".ScreenAdminTableInfo"
             android:label="Bàn ăn" />

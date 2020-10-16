@@ -20,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-        SQLiteDatabase ezOrderDB;
         Thread wait = new Thread(){
             public void run(){
                 try {
