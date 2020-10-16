@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "488575468242",
+    "firebase_url": "https://ezorder-10102020.firebaseio.com",
+    "project_id": "ezorder-10102020",
+    "storage_bucket": "ezorder-10102020.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:488575468242:android:7eee076246e2c3c5dca30b",
+        "android_client_info": {
+          "package_name": "com.example.ezorder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "488575468242-08g1q9rhpnoqjgi75ffgs13o7saoq1g4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ezorder",
+            "certificate_hash": "415c503d83f4d769f9a1645c2f245c5336c63fa5"
+          }
+        },
+        {
+          "client_id": "488575468242-pj923dsba95lv17lrhje9r6ij3af3fng.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3xGnOnTQWHYuUoByw-eexoQN4ynwCqpQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "488575468242-pj923dsba95lv17lrhje9r6ij3af3fng.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
